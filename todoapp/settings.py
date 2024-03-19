@@ -103,11 +103,16 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT')
+        # 'NAME': config('DB_NAME'),
+        'NAME': 'churrascaria_db_o9b0',
+        # 'USER': config('DB_USER'),
+        'USER': 'admin',
+        # 'PASSWORD': config('DB_PASSWORD'),
+        'PASSWORD': 'GCSqhCAgZQSNh3yqoJeQLClpjAgmyJRf',
+        # 'HOST': config('DB_HOST'),
+        'HOST': 'dpg-cns569ta73kc73ds39ag-a.oregon-postgres.render.com',
+        # 'PORT': config('DB_PORT'),
+        'PORT': '5432',
     }
 }
 
