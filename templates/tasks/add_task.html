@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Adicionar Tarefa - {{ block.super }}
+{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <h1>Tarefa</h1>
+        {% include 'partials/messages.html' %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">                    
+                    <form action="." method="POST">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="{{ form.name.id_for_label }}" class="form-label">Nome:</label>
+                            {{ form.name|add_class:"form-control"|attr:"autofocus" }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.description.id_for_label }}" class="form-label">Descrição:</label>
+                            {{ form.description|add_class:"form-control" }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.end_date.id_for_label }}" class="form-label">Data Final:</label>
+                            {{ form.end_date|add_class:"form-control" }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.priority.id_for_label }}" class="form-label">Prioridade:</label>
+                            {{ form.priority|add_class:"form-select" }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.category.id_for_label }}" class="form-label">Categoria:</label>
+                            {{ form.category|add_class:"form-control" }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.status.id_for_label }}" class="form-label">Status:</label>
+                            {{ form.status|add_class:"form-select" }}
+                        </div>
+
+
+
+
+                        <input class="btn btn-primary" type="submit" value="Enviar">
+
+                        
+                        
+
+                    </form>
+
+
+                </div>
+                
+            
+            
+            </div>
+
+        </div>
+
+    </div>
+    
+
+    
+
+{% endblock body %}

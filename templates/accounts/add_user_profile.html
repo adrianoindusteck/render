@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+
+{% block title %}
+
+    Alterar Perfil - {{ block.super }}
+    
+{% endblock title %}
+
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="col-md-12">
+            
+            <h1>Alterar Perfil</h1>
+            {% include 'partials/messages.html' %}
+
+            <form method="POST" action="." enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="{{ form.photo.id_for_label }}" class="form-label">Foto do Perfil</label>
+                    {{ form.photo|add_class:"form-control" }}                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="{{ form.cell_phone.id_for_label }}" class="form-label">Celular</label>
+                    {{ form.cell_phone|add_class:"form-control" }}                    
+                </div>
+
+                
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+
+
+        </div>
+
+
+    </div>
+    
+{% endblock body %}
+    
+    
